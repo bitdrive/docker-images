@@ -18,6 +18,10 @@ RUN adduser -Su 1337 kong \
 	&& cp -R /tmp/etc / \
 	&& rm -rf /tmp/etc \
 	&& setcap cap_net_raw=+ep /usr/local/openresty/nginx/sbin/nginx \
+	&& ls -al /usr/local/  \
+	&& ls -al /usr/local/lib  \
+	&& ls -al /usr/local/lib/luarocks/  \
+	&& ls -al /usr/local/lib/luarocks/rocks  \
 	&& setcap cap_net_raw=+ep /usr/local/lib/luarocks/rocks \
 	&& apk del .build-deps
 

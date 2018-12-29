@@ -18,8 +18,6 @@ RUN adduser -Su 1337 kong \
 	&& cp -R /tmp/etc / \
 	&& rm -rf /tmp/etc \
 	&& setcap cap_net_raw=+ep /usr/local/openresty/nginx/sbin/nginx \
-	&& ls -al /usr/local/bin/luarocks  \
-	&& setcap cap_net_raw=+ep /usr/local/bin/luarocks \
 	&& apk del .build-deps
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh

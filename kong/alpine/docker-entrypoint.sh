@@ -9,8 +9,8 @@ if [[ "$1" == "kong" ]]; then
     need_install_plugins=${KONG_PLUGINS:-}
     kong prepare -p "$PREFIX"
     if [ -n "$need_install_plugins" ];then
-        echo "need_install_plugins is not empty: ${need_install_plugins}"
-        luarocks install kong-plugin-${need_install_plugins}
+        echo "luarocks install kong-plugin-${need_install_plugins} --local"
+        luarocks install kong-plugin-${need_install_plugins} --local
     fi
     exec /usr/local/openresty/nginx/sbin/nginx \
       -p "$PREFIX" \

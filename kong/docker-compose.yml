@@ -32,6 +32,7 @@ services:
       KONG_PROXY_ACCESS_LOG: /dev/stdout
       KONG_PROXY_ERROR_LOG: /dev/stderr
       # KONG_PLUGINS: myplugin
+      # KONG_PLUGINS_SERVER: http://luarocks.org/manifests/xuybin
     links:
       - db:db
     ports:
